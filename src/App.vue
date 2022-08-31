@@ -1,20 +1,19 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <totalizer-main />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TotalizerMain from './components/TotalizerMain';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    TotalizerMain,
   }
 }
 </script>
 
-<style>
+<style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -22,5 +21,36 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+#app > * {
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #265727;
+  border: none;
+  color: white;
+  padding: .5rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: #479f48;
+  }
+
+  &:disabled {
+    background-color: #98b099;
+  }
+
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+
+  &.button-wide {
+    width: 100%;
+  }
 }
 </style>
